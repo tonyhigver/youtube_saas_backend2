@@ -1,4 +1,5 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS  # <-- Importar CORS
 from utils.youtube import get_channel_id, get_latest_video_url
 from utils.audio import download_audio
 from utils.transcribe import transcribe_audio
@@ -6,6 +7,7 @@ from utils.embeddings import generate_embeddings
 from utils.pinecone_utils import index
 
 app = Flask(__name__)
+CORS(app)  # <-- Habilitar CORS para todos los orígenes
 
 @app.route("/process", methods=["POST"])
 def process_channel():
