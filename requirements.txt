@@ -4,3 +4,4 @@ pinecone
 youtube-transcript-api
 yt-dlp
 gunicorn
+python-dotenv
