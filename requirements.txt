@@ -1,0 +1,6 @@
+flask
+openai
+pinecone
+youtube-transcript-api
+yt-dlp
+gunicorn
