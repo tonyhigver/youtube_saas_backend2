@@ -5,6 +5,14 @@ from utils.audio import download_audio
 from utils.transcribe import transcribe_audio
 from utils.embeddings import generate_embeddings
 from utils.pinecone_utils import index
+import os  # <-- Importar os para leer variables de entorno
+
+# Crear cookies.txt en runtime si existe la variable
+cookies_env = os.getenv("YOUTUBE_COOKIES")
+if cookies_env:
+    with open("youtube_cookies.txt", "w", encoding="utf-8") as f:
+        f.write(cookies_env)
+    print("[INFO] youtube_cookies.txt creado desde variable de entorno")
 
 app = Flask(__name__)
 CORS(app)  # <-- Habilitar CORS para todos los orígenes
