@@ -2,7 +2,7 @@ flask
 openai
 pinecone
 youtube-transcript-api
-yt-dlp
+yt-dlp>=2025.1.15
 gunicorn
 python-dotenv
 sentence-transformers
