@@ -87,4 +87,5 @@ def search_query():
         return jsonify({"error": str(e)}), 500
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    # Cambiado para producción: host 0.0.0.0 y puerto configurable
+    app.run(host="0.0.0.0", port=int(os.getenv("PORT", 5000)))
